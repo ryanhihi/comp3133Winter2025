@@ -5,7 +5,7 @@ const inputFile = 'input_countries.csv';
 const canadaFile = 'canada.txt';
 const usaFile = 'usa.txt';
 
-// Function to delete files if they already exist
+// 1. Delete file function
 function deleteIfExists(file) {
   if (fs.existsSync(file)) {
     fs.unlinkSync(file);
