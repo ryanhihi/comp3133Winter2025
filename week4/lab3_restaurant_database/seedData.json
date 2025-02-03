@@ -1,0 +1,123 @@
+[
+    {
+      "name": "Morris Park Bake Shop",
+      "city": "Bronx",
+      "restaurant_id": "30075445",
+      "cuisine": "Bakery",
+      "address": {
+        "building": "1008",
+        "street": "Morris Park Ave",
+        "zipcode": "10462"
+      }
+    },
+    {
+      "name": "Pho Me Long Time",
+      "city": "Manhattan",
+      "restaurant_id": "30075455",
+      "cuisine": "Vietnamese",
+      "address": {
+        "street": "Thai Son Street",
+        "zipcode": null
+      }
+    },
+    {
+      "name": "Mom's Fried Chicken",
+      "city": "Bronx",
+      "restaurant_id": "40382900",
+      "cuisine": "Chicken",
+      "address": {
+        "building": "253",
+        "street": "East 167 Street",
+        "zipcode": null
+      }
+    },
+    {
+      "name": "Montebello Restaurant",
+      "city": "Mahattan",
+      "restaurant_id": "40397082",
+      "cuisine": "Italian",
+      "address": {
+        "building": "120",
+        "street": "East 56 Street",
+        "zipcode": "19800"
+      }
+    },
+    {
+      "name": "Joeys Burgers",
+      "city": "Staten Island",
+      "restaurant_id": "40397555",
+      "cuisine": "Hamburgers",
+      "address": {
+        "building": "195",
+        "street": "Soprano Street",
+        "zipcode": "17500"
+      }
+    },
+    {
+      "name": "Brunos on the Boulevard",
+      "city": "Queens",
+      "restaurant_id": "40397678",
+      "cuisine": "American",
+      "address": {
+        "building": "200",
+        "street": "Queens Boulevard",
+        "zipcode": "19700"
+      }
+    },
+    {
+      "name": "Iron Chef House",
+      "city": "Brooklyn",
+      "restaurant_id": "40397699",
+      "cuisine": "Japanese",
+      "address": {
+        "building": "555",
+        "street": "Sushi Street",
+        "zipcode": "17700"
+      }
+    },
+    {
+      "name": "Wasabi Sushi",
+      "city": "Brooklyn",
+      "restaurant_id": "40398000",
+      "cuisine": "Japanese",
+      "address": {
+        "building": "555",
+        "street": "Fontana Street",
+        "zipcode": null
+      }
+    },
+    {
+      "name": "Sal's Deli",
+      "city": "Brooklyn",
+      "restaurant_id": "40898000",
+      "cuisine": "Delicatessen",
+      "address": {
+        "building": "900",
+        "street": "Goodfellas Street",
+        "zipcode": "17788"
+      }
+    },
+    {
+      "name": "Big Tony's Sandwich Buffet",
+      "city": "Queens",
+      "restaurant_id": "40898554",
+      "cuisine": "Delicatessen",
+      "address": {
+        "building": "909",
+        "street": "44 Gangster Way",
+        "zipcode": "17988"
+      }
+    },
+    {
+      "name": "The Godfather Panini Express",
+      "city": "Queens",
+      "restaurant_id": "40898554",
+      "cuisine": "Delicatessen",
+      "address": {
+        "building": "1201",
+        "street": "121 Canolli Way",
+        "zipcode": "17989"
+      }
+    }
+  ]
+  
