@@ -1,19 +1,41 @@
-const CFG = require("./config/config");
-const app = require("./app");
 const express = require("express");
+const mongoose = require("mongoose");
+const { ApolloServer } = require("apollo-server-express");
+const schema = require("./graphql/schema");
 
-app.use(express.json());
+const SERVER_PORT = 3002;
+const MONGO_URI = "mongodb+srv://willbluemoon99:EmCK6UKBZx7vVQJm@ryan.nz0hm.mongodb.net/comp3133_101460443_assignment1?retryWrites=true&w=majority&appName=Ryan";
 
-const connectToMongo = require('./config/db');
+// Initialize Express app
+const app = express();
 
-connectToMongo();
+// Connect to MongoDB
+const connectDB = async () => {
+  try {
+    console.log("Attempting to connect to MongoDB...");
+    await mongoose.connect(MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("MongoDB connected successfully.");
+  } catch (error) {
+    console.error(`Error connecting to MongoDB: ${error.message}`);
+    process.exit(1); // Exit process with failure
+  }
+};
 
-// Basic route for testing
-app.get('/', (req, res) => {
-    res.send('Assingment 1 Backend is Running!');
-});
+// Initialize ApolloServer
+const startApolloServer = async () => {
+  const server = new ApolloServer({ schema });
 
-// Start the server
-app.listen(CFG.PORT, () => {
-    console.log(`Server is running on http://localhost:${CFG.PORT}`);
-});
+  await server.start(); // Ensure the server starts
+  server.applyMiddleware({ app }); // Integrate with Express
+
+  app.listen(SERVER_PORT, async () => {
+    await connectDB(); // Connect to MongoDB before starting the server
+    console.log(`Server is running at http://localhost:${SERVER_PORT}${server.graphqlPath}`);
+  });
+};
+
+// Start the ApolloServer
+startApolloServer();
