@@ -20,7 +20,7 @@ const employeeTypeDef = buildSchema(
     type Query {
     getAllEmployees: [Employee]
     searchEmployeeById(eid: ID!): Employee
-    searchEmployeeByDesignationOrDepartment(designation: String, department: String): Employee
+    searchEmployeeByDesignationOrDepartment(designationOrDepartment: String): [Employee]
     }
 
     type Mutation {

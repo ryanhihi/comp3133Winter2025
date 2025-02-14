@@ -18,18 +18,29 @@ const employeeResolver = {
         throw new Error(`Error searching employee: ${error.message}`);
       }
     },
-    searchEmployeeByDesignationOrDepartment: async (_, { designation, department }) => {
+    searchEmployeeByDesignationOrDepartment: async (_, { designationOrDepartment }) => {
       try {
-        const filter = {};
-        if (designation) filter.designation = designation;
-        if (department) filter.department = department;
-
-        return await Employee.find(filter);
+        const filter = {
+          $or: [
+            { designation: designationOrDepartment },
+            { department: designationOrDepartment },
+          ],
+        };
+    
+        const employees = await Employee.find(filter);
+    
+        if (!employees || employees.length === 0) {
+          throw new Error("No employees found matching the criteria");
+        }
+    
+        return employees;
       } catch (error) {
         throw new Error(`Error searching employees: ${error.message}`);
       }
     },
-  },
+    
+},
+
   Mutation: {
     addEmployee: async (_, { firstName, lastName, email, gender, designation, salary, dateOfJoining, department, employeePhoto }) => {
       try {
@@ -53,9 +64,9 @@ const employeeResolver = {
         throw new Error(`Error adding employee: ${error.message}`);
       }
     },
-    updateEmployeeById: async (_, { id, ...updatedData }) => {
+    updateEmployeeById: async (_, { eid, ...updatedData }) => {
       try {
-        const updatedEmployee = await Employee.findByIdAndUpdate(id, updatedData, { new: true });
+        const updatedEmployee = await Employee.findByIdAndUpdate(eid, updatedData, { new: true });
         if (!updatedEmployee) throw new Error("Employee not found");
         return updatedEmployee;
       } catch (error) {

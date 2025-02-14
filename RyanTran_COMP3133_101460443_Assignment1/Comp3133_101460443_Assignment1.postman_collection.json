@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "e8736df3-2d73-418f-8e20-a896d2f059d1",
+		"name": "Comp3133_101460443_Assignment1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38658188"
+	},
+	"item": [
+		{
+			"name": "addEmployee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  addEmployee(\r\n    id: \"1245\",\r\n    firstName: \"Ryan\",\r\n    lastName: \"Tran\",\r\n    email: \"ryan.123@georgebrown.ca\",\r\n    gender: \"Male\",\r\n    designation: \"Data Management\",\r\n    salary: 500000,\r\n    dateOfJoining: \"2023-01-01\",\r\n    department: \"IT\",\r\n    employeePhoto: \"\"\r\n  ) {\r\n    id\r\n    firstName\r\n    email\r\n    designation\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": "http://localhost:3002/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllEmployees",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  getAllEmployees {\r\n    id\r\n    firstName\r\n    lastName\r\n    email\r\n    gender\r\n    designation\r\n    salary\r\n    dateOfJoining\r\n    department\r\n    employeePhoto\r\n    createdAt\r\n    updatedAt\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": "http://localhost:3002/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "searchEmployeeById",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  searchEmployeeById(eid: \"67afaa1c46f7489d0c3e6e45\") {\r\n    id\r\n    firstName\r\n    lastName\r\n    email\r\n    gender\r\n    designation\r\n    salary\r\n    dateOfJoining\r\n    department\r\n    employeePhoto\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": "http://localhost:3002/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "searchEmployeeByDesignationOrDepartment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  searchEmployeeById(eid: \"67afaa1c46f7489d0c3e6e45\") {\r\n    id\r\n    firstName\r\n    lastName\r\n    email\r\n    gender\r\n    designation\r\n    salary\r\n    dateOfJoining\r\n    department\r\n    employeePhoto\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": "http://localhost:3002/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "updateEmployeeById",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  updateEmployeeById(\r\n    eid: \"67afaa1c46f7489d0c3e6e45\", \r\n    firstName: \"Dino\",\r\n    email: \"dino.tran@georgebrown.ca\",\r\n    gender : \"Male\",\r\n    designation: \"Data Analyst\") {\r\n   \r\n    firstName\r\n    lastName\r\n    email\r\n    designation\r\n    salary\r\n    dateOfJoining\r\n    department\r\n    employeePhoto\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": "http://localhost:3002/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteEmployeeById",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  updateEmployeeById(\r\n    eid: \"67afaa1c46f7489d0c3e6e45\", \r\n    firstName: \"Dino\",\r\n    email: \"dino.tran@georgebrown.ca\",\r\n    gender : \"Male\",\r\n    designation: \"Data Analyst\") {\r\n   \r\n    firstName\r\n    lastName\r\n    email\r\n    designation\r\n    salary\r\n    dateOfJoining\r\n    department\r\n    employeePhoto\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": "http://localhost:3002/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation { \r\n    signup(\r\n    username: \"ryanhihi\", \r\n    email: \"ryan.tran@georgebrown.ca\", \r\n    password: \"Rememberme11\") \r\n    { \r\n    id \r\n    username \r\n    email } \r\n}\r\n\r\n",
+						"variables": ""
+					}
+				},
+				"url": "http://localhost:3002/graphql"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  addEmployee(\r\n    id: \"1245\",\r\n    firstName: \"Ryan\",\r\n    lastName: \"Tran\",\r\n    email: \"ryan.123@georgebrown.ca\",\r\n    gender: \"Male\",\r\n    designation: \"Data Management\",\r\n    salary: 500000,\r\n    dateOfJoining: \"2023-01-01\",\r\n    department: \"IT\",\r\n    employeePhoto: \"\"\r\n  ) {\r\n    id\r\n    firstName\r\n    email\r\n    designation\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": "http://localhost:3002/graphql"
+			},
+			"response": []
+		}
+	]
+}

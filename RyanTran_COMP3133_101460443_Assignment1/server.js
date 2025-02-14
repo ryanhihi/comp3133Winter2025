@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const { ApolloServer } = require("apollo-server-express");
 const schema = require("./graphql/schema");
+require('dotenv').config();
+
 
 const SERVER_PORT = 3002;
 const MONGO_URI = "mongodb+srv://willbluemoon99:EmCK6UKBZx7vVQJm@ryan.nz0hm.mongodb.net/comp3133_101460443_assignment1?retryWrites=true&w=majority&appName=Ryan";
